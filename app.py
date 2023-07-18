@@ -20,7 +20,6 @@ def get_chatbot_response():
     if chat_history:
         messages.append({"role": "assistant", "content": chat_history[-1]})
 
-    
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=messages,

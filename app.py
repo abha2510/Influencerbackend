@@ -6,7 +6,7 @@ import re
 
 app = Flask(__name__)
 CORS(app)
-openai.api_key = "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"
+openai.api_key = "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"
 
 chat_history = []
 
@@ -23,8 +23,8 @@ def get_chatbot_response():
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=messages,
-        temperature=0.7,
-        max_tokens=200, 
+        temperature=1.05,
+        max_tokens=202,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0

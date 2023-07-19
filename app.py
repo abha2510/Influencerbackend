@@ -2,11 +2,16 @@ from flask import Flask, request, jsonify
 import openai
 from flask_cors import CORS
 import re
+from dotenv import load_dotenv
+import os
+#from decouple import config
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
-openai.api_key ="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"
-
+openai.api_key =os.getenv('open_ai_key')
+# openai.api_key=config('open_ai_key')
 chat_history = []
 
 @app.route("/getChatbotResponse", methods=["POST"])
